@@ -9,11 +9,8 @@ int main()
 	complex a(1, 2);
 	complex b(2, 4);
 
-	cout << "a = " << a << endl;
-	cout << "b = " << b << endl;
-
 	complex c = a + b;
-	cout << "c = a + b = " << c << endl;
+	cout << c << endl;
 
 	getchar();
 
