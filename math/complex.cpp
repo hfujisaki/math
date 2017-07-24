@@ -41,25 +41,29 @@ namespace math
 		return complex(_x + z._x, _y + z._y);
 	}
 
+	complex complex::operator+(double x)
+	{
+		return complex(_x + x, _y);
+	}
+
 	complex & complex::operator+=(const complex & z)
 	{
 		_x += z._x;
-		_y += z._x;
+		_y += z._y;
 
 		return *this;
 	}
 
-	complex complex::operator-(const complex & z)
+	complex & complex::operator+=(double x)
 	{
-		return complex(_x - z._x, _y - z._y);
-	}
-
-	complex & complex::operator-=(const complex & z)
-	{
-		_x -= z._x;
-		_y -= z._x;
+		_x += x;
 
 		return *this;
+	}
+
+	complex operator+(double x, const complex & z)
+	{
+		return complex(x + z._x, z._y);
 	}
 
 	std::ostream & operator<<(std::ostream & out, const complex & z)

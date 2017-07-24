@@ -19,17 +19,31 @@ namespace mathTest
 
 			Assert::AreEqual(a.x() + b.x(), c.x());
 			Assert::AreEqual(a.y() + b.y(), c.y());
+
+			complex d = a + 5;
+
+			Assert::AreEqual(d.x(), a.x() + 5);
 		}
 
 		TEST_METHOD(TestMethod2)
 		{
-			complex a(1, 2);
-			complex b(2, 4);
+			double ax = 1;
+			double ay = 2;
 
-			complex c = a - b;
+			double bx = 2;
+			double by = 4;
 
-			Assert::AreEqual(a.x() - b.x(), c.x());
-			Assert::AreEqual(a.y() - b.y(), c.y());
+			complex a(ax, ay);
+			complex b(bx, by);
+
+			a += b;
+
+			Assert::AreEqual(ax + bx, a.x());
+			Assert::AreEqual(ay + by, a.y());
+
+			b += bx;
+
+			Assert::AreEqual(bx + bx, b.x());
 		}
 	};
 }
